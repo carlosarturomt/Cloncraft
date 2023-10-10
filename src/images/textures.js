@@ -17,6 +17,14 @@ grassTexture.wrapS = RepeatWrapping
 grassTexture.wrapT = RepeatWrapping
 grassTexture.magFilter = NearestFilter
 
+dirtTexture.wrapS = RepeatWrapping
+dirtTexture.wrapT = RepeatWrapping
+dirtTexture.magFilter = NearestFilter
+
+woodTexture.wrapS = RepeatWrapping
+woodTexture.wrapT = RepeatWrapping
+woodTexture.magFilter = NearestFilter
+
 export {
     grassTexture,
     dirtTexture,
