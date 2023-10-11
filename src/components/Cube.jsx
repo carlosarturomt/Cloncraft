@@ -13,7 +13,6 @@ export const Cube = ({ id, position, texture }) => {
     }))
 
     const activeTexture = textures[texture + 'Texture']
-    // activeTexture.repeat.set(1, 1)
 
     return (
         <mesh
@@ -26,6 +25,7 @@ export const Cube = ({ id, position, texture }) => {
                 setIsHovered(false)
             }}
             ref={ref}
+
             onClick={(e) => {
                 e.stopPropagation()
                 if (e.altKey) {

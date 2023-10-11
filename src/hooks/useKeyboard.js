@@ -32,6 +32,18 @@ export const useKeyboard = () => {
     })
 
     useEffect(() => {
+        const handleClick = event => {
+            const { code } = event
+            if (code === undefined) {
+                let element = document.getElementById("hand");
+                element.classList.add("hand_move");
+                setTimeout(() => {
+                    element.classList.remove("hand_move");
+                }, 100)
+                // console.log(':D');
+            }
+        }
+
         const handleKeyDown = event => {
             const { code } = event
             const action = ACTIONS_KEYBOARD_MAP[code]
@@ -42,8 +54,6 @@ export const useKeyboard = () => {
                     [action]: true
                 }))
             }
-
-            // console.log(action);
         }
 
         const handleKeyUp = event => {
@@ -58,6 +68,7 @@ export const useKeyboard = () => {
             }
         }
 
+        document.addEventListener('click', handleClick)
         document.addEventListener('keydown', handleKeyDown)
         document.addEventListener('keyup', handleKeyUp)
 

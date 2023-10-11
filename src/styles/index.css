@@ -67,3 +67,11 @@ body {
     bottom: 0;
     right: 10%;
 }
+
+.hand_move {
+    width: 16.5%;
+    height: 50%;
+    bottom: -15%;
+    right: 15%;
+    transform: rotate(-35deg);
+}

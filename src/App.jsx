@@ -7,12 +7,9 @@ import { Player } from './components/Player.jsx'
 import { Cubes } from './components/Cubes.jsx'
 import { TextureSelector } from './components/TextureSelec.jsx'
 import handSteve from './assets/imgs/hand_steve.png'
+// import handTool from './assets/imgs/pico_de_diamante_encantado.webp'
 
 function App() {
-
-  const test = () => {
-    console.log('hand');
-  }
 
   return (
     <>
@@ -29,7 +26,7 @@ function App() {
       </Canvas>
 
       <div className='pointer'>+</div>
-      <img src={handSteve} alt='hand' className='hand_steve' />
+      <img id='hand' src={handSteve} alt='hand' className='hand_steve' />
       <TextureSelector />
     </>
   )
