@@ -9,13 +9,18 @@ export function Ground() {
   }))
 
   const [addCube] = useStore(state => [state.addCube])
+  const [addCube2] = useStore(state => [state.texture])
 
   groundTexture.repeat.set(100, 100)
 
   const handleClickGround = event => {
     event.stopPropagation()
     const [x, y, z] = Object.values(event.point).map(n => Math.ceil(n))
-    addCube(x, y, z)
+    if (addCube2 == 'hand') {
+      // console.log(666);
+    } else {
+      addCube(x, y, z)
+    }
   }
 
   return (

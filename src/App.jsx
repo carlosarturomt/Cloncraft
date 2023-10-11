@@ -7,6 +7,7 @@ import { Player } from './components/Player.jsx'
 import { Cubes } from './components/Cubes.jsx'
 import { TextureSelector } from './components/TextureSelec.jsx'
 import handSteve from './assets/imgs/hand_steve.png'
+import block from './assets/imgs/blocks/diamond_block.webp'
 // import handTool from './assets/imgs/pico_de_diamante_encantado.webp'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       </Canvas>
 
       <div className='pointer'>+</div>
+      {/* <img id='block' src={block} alt='block' className='block' /> */}
       <img id='hand' src={handSteve} alt='hand' className='hand_steve' />
       <TextureSelector />
     </>

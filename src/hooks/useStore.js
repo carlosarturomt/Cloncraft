@@ -2,8 +2,7 @@ import { nanoid } from "nanoid";
 import create from "zustand";
 
 export const useStore = create(set => ({
-    texture: 'dirt',
-
+    texture: 'hand',
 
     cubes: [
         // Tree Simple
@@ -176,11 +175,6 @@ export const useStore = create(set => ({
         },
         {
             id: nanoid(),
-            pos: [11, 2, -10],
-            texture: 'leaves'
-        },
-        {
-            id: nanoid(),
             pos: [9, 2, -11],
             texture: 'leaves'
         },
@@ -196,17 +190,17 @@ export const useStore = create(set => ({
         },
         {
             id: nanoid(),
-            pos: [11, 2, -9],
+            pos: [9, 2, -9],
             texture: 'leaves'
         },
         {
             id: nanoid(),
-            pos: [10, 2, -11],
+            pos: [7, 2, -11],
             texture: 'leaves'
         },
         {
             id: nanoid(),
-            pos: [10, 2, -9],
+            pos: [10, 2, -10],
             texture: 'leaves'
         },
         {
@@ -231,7 +225,7 @@ export const useStore = create(set => ({
         },
         {
             id: nanoid(),
-            pos: [10, 2, -10],
+            pos: [9, 2, -10],
             texture: 'leaves'
         },
         {
@@ -241,12 +235,27 @@ export const useStore = create(set => ({
         },
         {
             id: nanoid(),
+            pos: [8, 4, -9],
+            texture: 'leaves'
+        },
+        {
+            id: nanoid(),
             pos: [7, 3, -10],
             texture: 'leaves'
         },
         {
             id: nanoid(),
-            pos: [10, 3, -10],
+            pos: [7, 4, -10],
+            texture: 'leaves'
+        },
+        {
+            id: nanoid(),
+            pos: [9, 3, -10],
+            texture: 'leaves'
+        },
+        {
+            id: nanoid(),
+            pos: [9, 4, -10],
             texture: 'leaves'
         },
         {
@@ -256,7 +265,17 @@ export const useStore = create(set => ({
         },
         {
             id: nanoid(),
+            pos: [8, 4, -11],
+            texture: 'leaves'
+        },
+        {
+            id: nanoid(),
             pos: [8, 4, -10],
+            texture: 'leaves'
+        },
+        {
+            id: nanoid(),
+            pos: [8, 5, -10],
             texture: 'leaves'
         }
     ],

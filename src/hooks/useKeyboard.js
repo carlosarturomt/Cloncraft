@@ -5,6 +5,7 @@ const ACTIONS_KEYBOARD_MAP = {
     KeyS: 'moveBackward',
     KeyA: 'moveLeft',
     KeyD: 'moveRight',
+    KeyQ: 'hand',
     Space: 'jump',
     Digit1: 'diamond',
     Digit2: 'dirt',
@@ -29,6 +30,7 @@ export const useKeyboard = () => {
         leaves: false,
         log: false,
         wood: false,
+        // '': false,
     })
 
     useEffect(() => {
@@ -37,8 +39,13 @@ export const useKeyboard = () => {
             if (code === undefined) {
                 let element = document.getElementById("hand");
                 element.classList.add("hand_move");
+
+                // let block = document.getElementById("block");
+                // block.classList.add("block_move");
+
                 setTimeout(() => {
                     element.classList.remove("hand_move");
+                    // block.classList.remove("block_move");
                 }, 100)
                 // console.log(':D');
             }
@@ -54,6 +61,8 @@ export const useKeyboard = () => {
                     [action]: true
                 }))
             }
+
+            console.log(code);
         }
 
         const handleKeyUp = event => {

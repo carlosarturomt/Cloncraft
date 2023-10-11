@@ -8,6 +8,7 @@ export const TextureSelector = () => {
     const [texture, setTexture] = useStore(state => [state.texture, state.setTexture])
 
     const {
+        hand,
         diamond,
         dirt,
         grass,
@@ -32,6 +33,7 @@ export const TextureSelector = () => {
 
     useEffect(() => {
         const options = {
+            hand,
             diamond,
             dirt,
             grass,
@@ -52,13 +54,16 @@ export const TextureSelector = () => {
 
         console.log(selectedTexture);
 
-    }, [diamond, dirt, grass, glass, wood, log, leaves])
+    }, [hand, diamond, dirt, grass, glass, wood, log, leaves])
 
     // if (!visible) return null
 
     return (
         <div className='texture-selector'>
-
+            <div className={texture === 'hand' ? 'selected texture-selector--box' : 'texture-selector--box'}>
+                <div className={texture === 'hand' ? 'selected-null--active' : 'selected-null'}>
+                </div>
+            </div>
             {
                 Object
                     .entries(images)
