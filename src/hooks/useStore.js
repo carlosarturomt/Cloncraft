@@ -14,11 +14,15 @@ export const useStore = create(set => ({
     }, {
         id: nanoid(),
         pos: [1, 2, 1],
-        texture: 'grass'
+        texture: 'leaves'
     }, {
         id: nanoid(),
         pos: [1, 3, 1],
-        texture: 'grass'
+        texture: 'leaves'
+    }, {
+        id: nanoid(),
+        pos: [1, 4, 1],
+        texture: 'leaves'
     }],
     addCube: (x, y, z) => {
         set(state => ({
@@ -29,8 +33,14 @@ export const useStore = create(set => ({
             }]
         }))
     },
-    removeCube: () => { },
-    setTexture: () => { },
+    removeCube: (id) => {
+        set(state => ({
+            cubes: state.cubes.filter(cube => cube.id != id)
+        }))
+    },
+    setTexture: (texture) => {
+        set(() => ({ texture }))
+    },
     saveWorld: () => { },
     resetWorld: () => { }
 }))

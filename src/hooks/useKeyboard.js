@@ -6,11 +6,13 @@ const ACTIONS_KEYBOARD_MAP = {
     KeyA: 'moveLeft',
     KeyD: 'moveRight',
     Space: 'jump',
-    Digit1: 'dirt',
-    Digit2: 'grass',
+    Digit1: 'diamond',
+    Digit2: 'dirt',
     Digit3: 'glass',
-    Digit4: 'wood',
-    Digit5: 'log'
+    Digit4: 'grass',
+    Digit5: 'leaves',
+    Digit6: 'log',
+    Digit7: 'wood',
 }
 
 export const useKeyboard = () => {
@@ -19,11 +21,14 @@ export const useKeyboard = () => {
         moveBackward: false,
         moveLeft: false,
         moveRight: false,
-        jum: false,
+        jump: false,
+        diamond: false,
         dirt: false,
+        glass: false,
         grass: false,
+        leaves: false,
+        log: false,
         wood: false,
-        log: false
     })
 
     useEffect(() => {
@@ -33,9 +38,12 @@ export const useKeyboard = () => {
             if (action) {
                 // if(actions[action]) return
                 setActions(prevActions => ({
-                    ...prevActions, [action]: true
+                    ...prevActions,
+                    [action]: true
                 }))
             }
+
+            // console.log(action);
         }
 
         const handleKeyUp = event => {
@@ -44,7 +52,8 @@ export const useKeyboard = () => {
             if (action) {
                 // if (!actions[action]) return
                 setActions(prevActions => ({
-                    ...prevActions, [action]: false
+                    ...prevActions,
+                    [action]: false
                 }))
             }
         }
@@ -54,7 +63,9 @@ export const useKeyboard = () => {
 
         return () => {
             document.removeEventListener('keydown', handleKeyDown)
+            document.removeEventListener('keyup', handleKeyUp)
         }
+
     }, [])
 
     return actions

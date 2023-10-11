@@ -1,6 +1,6 @@
 import { usePlane } from '@react-three/cannon'
-import { grassTexture, woodTexture } from '../images/textures'
 import { useStore } from '../hooks/useStore'
+import { groundTexture } from '../images/textures'
 
 export function Ground() {
   const [ref] = usePlane(() => ({
@@ -8,21 +8,23 @@ export function Ground() {
     position: [0, -0.5, 0] //x, y, z
   }))
 
-  // const [addCube] = useStore(state => state.addCube)
+  const [addCube] = useStore(state => [state.addCube])
 
-  grassTexture.repeat.set(100, 100)
+  groundTexture.repeat.set(100, 100)
 
-  // const handleClickGround = event =< {
-  //   event.stopPropagation()
-  // }
+  const handleClickGround = event => {
+    event.stopPropagation()
+    const [x, y, z] = Object.values(event.point).map(n => Math.ceil(n))
+    addCube(x, y, z)
+  }
 
   return (
     <mesh
-      // onClick={handleClickGround}
+      onClick={handleClickGround}
       ref={ref}
     >
       <planeBufferGeometry attach='geometry' args={[100, 100]} />
-      <meshStandardMaterial attach='material' map={grassTexture} />
+      <meshStandardMaterial attach='material' map={groundTexture} />
     </mesh>
   )
 }

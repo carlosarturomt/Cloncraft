@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { Vector3 } from "three";
 import { useKeyboard } from "../hooks/useKeyboard";
 
-const CHARACTER_SPEED = 2
+const CHARACTER_SPEED = 3
 const CHARACTER_JUMP_FORCE = 4
 
 export const Player = () => {
@@ -21,7 +21,7 @@ export const Player = () => {
     const [ref, api] = useSphere(() => ({
         mass: 1,
         type: "Dynamic",
-        position: [0, 1.5, 0]
+        position: [0, 5, 0]
     }))
 
     const pos = useRef([0, 0, 0])

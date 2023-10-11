@@ -27,3 +27,43 @@ body {
     transform: translate(-50%, -50%);
     opacity: 0.5;
 }
+
+.texture-selector {
+    width: auto;
+    display: flex;
+    position: absolute;
+    height: 60px;
+    top: 94%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+}
+
+.texture-selector--box {
+    border: 1px solid rgb(109, 109, 109);
+    background: rgba(0, 0, 0, 0.478);
+}
+
+.selected {
+    border: 1px solid rgb(182, 182, 182);
+    background: rgba(136, 136, 136, 0.225)
+}
+
+.texture-selector img {
+    width: 55px;
+    z-index: 100;
+    image-rendering: pixelated;
+    border: solid 3px gray;
+    padding: 5px;
+}
+
+.selected-img {
+    border: solid 3px rgb(182, 182, 182) !important;
+}
+
+.hand_steve {
+    width: 17%;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+}
