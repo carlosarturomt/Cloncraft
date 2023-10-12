@@ -11,7 +11,7 @@ export function Ground() {
   const [addCube] = useStore(state => [state.addCube])
   const [addCube2] = useStore(state => [state.texture])
 
-  groundTexture.repeat.set(100, 100)
+  groundTexture.repeat.set(1000, 1000)
 
   const handleClickGround = event => {
     event.stopPropagation()
@@ -28,7 +28,7 @@ export function Ground() {
       onClick={handleClickGround}
       ref={ref}
     >
-      <planeBufferGeometry attach='geometry' args={[100, 100]} />
+      <planeBufferGeometry attach='geometry' args={[1000, 1000]} />
       <meshStandardMaterial attach='material' map={groundTexture} />
     </mesh>
   )
