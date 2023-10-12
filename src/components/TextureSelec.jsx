@@ -9,6 +9,7 @@ export const TextureSelector = () => {
 
     const {
         hand,
+        cobblestone,
         diamond,
         dirt,
         grass,
@@ -34,6 +35,7 @@ export const TextureSelector = () => {
     useEffect(() => {
         const options = {
             hand,
+            cobblestone,
             diamond,
             dirt,
             grass,
@@ -54,32 +56,40 @@ export const TextureSelector = () => {
 
         console.log(selectedTexture);
 
-    }, [hand, diamond, dirt, grass, glass, wood, log, leaves])
+    }, [hand, cobblestone, diamond, dirt, grass, glass, wood, log, leaves])
 
     // if (!visible) return null
 
     return (
-        <div className='texture-selector'>
-            <div className={texture === 'hand' ? 'selected texture-selector--box' : 'texture-selector--box'}>
-                <div className={texture === 'hand' ? 'selected-null--active' : 'selected-null'}>
+        <>
+            <div className='texture-selector'>
+                <div className={texture === 'hand' ? 'selected texture-selector--box' : 'texture-selector--box'}>
+                    <div className={texture === 'hand' ? 'selected-null--active' : 'selected-null'}>
+                    </div>
                 </div>
-            </div>
-            {
-                Object
-                    .entries(images)
-                    .map(([imgKey, img]) => {
-                        return (
-                            <div className={texture === imgKey.replace('Img', '') ? 'selected texture-selector--box' : 'texture-selector--box'} key={imgKey}>
-                                <img
-                                    className={texture === imgKey.replace('Img', '') ? 'selected-img' : ''}
-                                    src={img}
-                                    alt={imgKey}
-                                />
-                            </div>
-                        )
-                    })
-            }
+                {
+                    Object
+                        .entries(images)
+                        .map(([imgKey, img]) => {
+                            return (
+                                <>
+                                    {/* <div id='block' className='block'>
+                                        <img src={texture === imgKey.replace('Img', '') ? img : ''} alt='' />
+                                    </div>*/}
+                                    <div className={texture === imgKey.replace('Img', '') ? 'selected texture-selector--box' : 'texture-selector--box'} key={imgKey}>
+                                        <img
+                                            className={texture === imgKey.replace('Img', '') ? 'selected-img texture-selector--img' : 'texture-selector--img'}
+                                            src={img}
+                                            alt={imgKey}
+                                        />
+                                    </div>
+                                </>
 
-        </div>
+                            )
+                        })
+                }
+
+            </div>
+        </>
     )
 }

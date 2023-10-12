@@ -1,4 +1,5 @@
 import {
+    cobblestoneImg,
     diamondImg,
     dirtImg,
     glassImg,
@@ -10,6 +11,7 @@ import {
 import { NearestFilter, RepeatWrapping, TextureLoader } from "three"
 
 const grassTexture = new TextureLoader().load(grassImg)
+const cobblestoneTexture = new TextureLoader().load(cobblestoneImg)
 const diamondTexture = new TextureLoader().load(diamondImg)
 const dirtTexture = new TextureLoader().load(dirtImg)
 const logTexture = new TextureLoader().load(logImg)
@@ -21,6 +23,10 @@ const groundTexture = new TextureLoader().load(grassImg)
 
 groundTexture.wrapS = RepeatWrapping
 groundTexture.wrapT = RepeatWrapping
+
+cobblestoneTexture.wrapS = RepeatWrapping
+cobblestoneTexture.wrapT = RepeatWrapping
+cobblestoneTexture.magFilter = NearestFilter
 
 diamondTexture.wrapS = RepeatWrapping
 diamondTexture.wrapT = RepeatWrapping
@@ -48,6 +54,7 @@ woodTexture.magFilter = NearestFilter
 
 export {
     groundTexture,
+    cobblestoneTexture,
     diamondTexture,
     grassTexture,
     dirtTexture,

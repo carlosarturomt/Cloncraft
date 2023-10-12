@@ -1,3 +1,4 @@
+export { default as cobblestoneImg } from '../assets/imgs/blocks/cobblestone_block.webp'
 export { default as diamondImg } from '../assets/imgs/blocks/diamond_block.webp'
 export { default as dirtImg } from '../assets/imgs/blocks/dirt_block.webp'
 export { default as grassImg } from '../assets/imgs/blocks/grass_block.webp'

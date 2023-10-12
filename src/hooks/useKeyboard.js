@@ -5,15 +5,16 @@ const ACTIONS_KEYBOARD_MAP = {
     KeyS: 'moveBackward',
     KeyA: 'moveLeft',
     KeyD: 'moveRight',
-    KeyQ: 'hand',
     Space: 'jump',
-    Digit1: 'diamond',
-    Digit2: 'dirt',
-    Digit3: 'glass',
-    Digit4: 'grass',
-    Digit5: 'leaves',
-    Digit6: 'log',
-    Digit7: 'wood',
+    Digit1: 'hand',
+    Digit2: 'cobblestone',
+    Digit3: 'diamond',
+    Digit4: 'dirt',
+    Digit5: 'glass',
+    Digit6: 'grass',
+    Digit7: 'leaves',
+    Digit8: 'log',
+    Digit9: 'wood',
 }
 
 export const useKeyboard = () => {
@@ -23,6 +24,7 @@ export const useKeyboard = () => {
         moveLeft: false,
         moveRight: false,
         jump: false,
+        cobblestone: false,
         diamond: false,
         dirt: false,
         glass: false,
@@ -40,12 +42,11 @@ export const useKeyboard = () => {
                 let element = document.getElementById("hand");
                 element.classList.add("hand_move");
 
-                // let block = document.getElementById("block");
-                // block.classList.add("block_move");
-
+                /* let block = document.getElementById("block");
+                block.classList.add("block_move"); */
                 setTimeout(() => {
                     element.classList.remove("hand_move");
-                    // block.classList.remove("block_move");
+                    /*  block.classList.remove("block_move"); */
                 }, 100)
                 // console.log(':D');
             }

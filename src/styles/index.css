@@ -33,7 +33,7 @@ body {
     display: flex;
     position: absolute;
     height: 60px;
-    top: 96.6%;
+    top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 2px solid black;
@@ -49,7 +49,7 @@ body {
     background: rgba(136, 136, 136, 0.225)
 }
 
-.texture-selector img {
+.texture-selector--img {
     width: 55px;
     z-index: 100;
     image-rendering: pixelated;
@@ -79,17 +79,24 @@ body {
 }
 
 .block {
-    width: 17%;
+    width: 35% !important;
     position: absolute;
-    bottom: 6%;
-    right: 16%;
+    top: -400% !important;
+    right: -40% !important;
+    z-index: -5;
+}
+
+.block img {
+    width: 100% !important;
 }
 
 .block_move {
-    width: 17%;
-    bottom: 12%;
-    right: 24%;
-    transform: rotate(0deg);
+    width: 35% !important;
+    position: absolute;
+    top: -300% !important;
+    right: -10% !important;
+    z-index: -5 !important;
+    transform: rotate(0deg) !important;
 }
 
 .hand_steve {
